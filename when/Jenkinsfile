@@ -8,12 +8,23 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
+                beforeAgent true
+                beforeInput true
+                beforeOptions true
+                triggeredBy "TimerTrigger"
                 not { branch 'master' }
                 //expression { BRANCH_NAME ==~ /(production|staging)/ }
                 //anyOf {
                 //    environment name: 'DEPLOY_TO', value: 'production'
                 //    environment name: 'DEPLOY_TO', value: 'staging'
                 //}
+            }
+            input {
+                message "Deploy to production?"
+                id "simple-input"
+            }
+            options {
+                lock label: 'testing-deploy-envs', quantity: 1, variable: 'deployEnv'
             }
             steps {
                 echo 'Deploying'
