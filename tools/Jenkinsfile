@@ -3,12 +3,14 @@ pipeline {
     tools {
         maven 'apache-maven' 
         gradle 'gradle'
+        jdk 'java-jdk'
     }
     stages {
         stage('Example') {
             steps {
                 sh 'mvn --version'
                 sh 'gradle --version'
+                sh 'java --version'
             }
         }
     }
