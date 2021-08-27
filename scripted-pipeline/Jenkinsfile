@@ -1,6 +1,6 @@
 node {
     stage('Flow Control') {
-        if (env.BRANCH_NAME == 'main') {
+        if (env.NODE_NAME == 'master') {
             echo 'I only execute on the master branch'
         } else {
             sh 'printenv'
