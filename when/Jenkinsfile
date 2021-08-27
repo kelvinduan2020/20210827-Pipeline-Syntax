@@ -10,7 +10,7 @@ pipeline {
             when {
                 beforeAgent true
                 beforeInput true
-                beforeOptions true
+                //beforeOptions true
                 //triggeredBy "TimerTrigger"
                 not { branch 'master' }
                 //expression { BRANCH_NAME ==~ /(production|staging)/ }
@@ -23,9 +23,9 @@ pipeline {
                 message "Deploy to production?"
                 id "simple-input"
             }
-            options {
-                lock label: 'testing-deploy-envs', quantity: 1, variable: 'deployEnv'
-            }
+            //options {
+            //    lock label: 'testing-deploy-envs', quantity: 1, variable: 'deployEnv'
+            //}
             steps {
                 echo 'Deploying'
             }
