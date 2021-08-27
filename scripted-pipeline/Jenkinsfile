@@ -1,9 +1,18 @@
 node {
-    stage('Example') {
+    stage('Flow Control') {
         if (env.BRANCH_NAME == 'main') {
             echo 'I only execute on the master branch'
         } else {
-            echo 'I execute elsewhere'
+            sh 'printenv'
+        }
+    }
+    stage('Try Catch') {
+        try {
+            sh 'exit 1'
+        }
+        catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
+            throw
         }
     }
 }
