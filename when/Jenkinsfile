@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
-                echo 'Hello World! ${env.BRANCH_NAME}'
+                echo "Hello World! ${env.BRANCH_NAME}"
             }
         }
         stage('Example Deploy') {
