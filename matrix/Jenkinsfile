@@ -19,7 +19,7 @@ pipeline {
                     }
                     axis {
                         name 'BROWSER'
-                        values 'firefox', 'chrome', 'safari', 'edge'
+                        values 'firefox', 'chrome', 'edge'
                     }
                 }
                 excludes {
@@ -30,7 +30,7 @@ pipeline {
                         }
                         axis {
                             name 'BROWSER'
-                            values 'safari'
+                            values 'chrome'
                         }
                     }
                     exclude {
@@ -40,7 +40,7 @@ pipeline {
                         }
                         axis {
                             name 'BROWSER'
-                            values 'edge'
+                            values 'firefox'
                         }
                     }
                 }
@@ -48,11 +48,6 @@ pipeline {
                     stage('Build') {
                         steps {
                             echo "Do Build for ${PLATFORM} - ${BROWSER}"
-                        }
-                    }
-                    stage('Test') {
-                        steps {
-                            echo "Do Test for ${PLATFORM} - ${BROWSER}"
                         }
                     }
                 }
