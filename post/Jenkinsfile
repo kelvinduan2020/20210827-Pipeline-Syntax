@@ -10,36 +10,6 @@ pipeline {
             always {
                 echo 'Always RUN'
             }
-            changed {
-                echo 'Only run if the current run has a different completion status from its previous run.'
-            }
-            fixed {
-                echo 'Only run if the current run is successful and the previous run failed or was unstable.'
-            }
-
-            regression {
-                echo 'Only run if the current run’s status is failure, unstable, or aborted and the previous run was successful.'
-            }
-
-            aborted {
-                echo 'Only run if the current run has an "aborted" status'
-            }
-
-            failure {
-                echo 'Only run if the current run has a "failed" status, red'
-            }
-
-            success {
-                echo 'Only run if the current run has a "success" status, blue or green'
-            }
-
-            unstable {
-                echo 'Only run if the current run has an "unstable" status, usually caused by test failures, code violations, yellow'
-            }
-
-            unsuccessful {
-                echo 'Only run if the current run has not a "success" status.'
-            }
 
             cleanup {
                 echo 'Run the steps in this post condition after every other post condition has been evaluated, regardless of the Pipeline or stage’s status.'
