@@ -26,15 +26,11 @@ pipeline {
                     //registryUrl 'https://myregistry.com/'
                     //registryCredentialsId 'myPredefinedCredentialsInJenkins'
                 }
-                steps {
-                    echo 'Hello, Nginx'
-                    sh 'sudo systemctl status nginx'
-                }
+            }
+            steps {
+                echo 'Hello, Nginx'
+                sh 'sudo systemctl status nginx'
             }
         }
     }
-    
-    
-    
-  
 }
