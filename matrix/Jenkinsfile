@@ -36,11 +36,11 @@ pipeline {
                     exclude {
                         axis {
                             name 'PLATFORM'
-                            notValues 'windows'
+                            values 'windows'
                         }
                         axis {
                             name 'BROWSER'
-                            values 'firefox'
+                            notValues 'firefox'
                         }
                     }
                 }
