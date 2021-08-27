@@ -11,7 +11,7 @@ pipeline {
                 beforeAgent true
                 beforeInput true
                 beforeOptions true
-                triggeredBy "TimerTrigger"
+                //triggeredBy "TimerTrigger"
                 not { branch 'master' }
                 //expression { BRANCH_NAME ==~ /(production|staging)/ }
                 //anyOf {
