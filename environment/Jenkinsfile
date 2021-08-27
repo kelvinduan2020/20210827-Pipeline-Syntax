@@ -1,9 +1,14 @@
 pipeline {
     agent any
     environment { 
-      TEST = 'test'
+      CC = 'clang'
     }
     stages {
+        stage('Example Global Environment') {
+            steps {
+                sh 'echo "CC is $CC"'
+            }
+        }
         stage('Example Username with Password') {
             environment {
                 SERVICE_CREDS = credentials('kelvin')
@@ -11,7 +16,6 @@ pipeline {
             steps {
                 sh 'echo "Service user is $SERVICE_CREDS_USR"'
                 sh 'echo "Service password is $SERVICE_CREDS_PSW"'
-                sh 'TEST = $TEST'
             }
         }
         stage('Example SSH Username with private key') {
