@@ -25,8 +25,8 @@ pipeline {
                 }
             }
             steps {
-                echo 'Hello, Ubuntu'
-                sh 'ls -l'
+                echo 'Hello, JDK'
+                sh 'java -version'
             }
         }
     }
