@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
+        choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows'], description: 'Run on specific platform')
     }
     stages {
         stage('BuildAndTest') {
