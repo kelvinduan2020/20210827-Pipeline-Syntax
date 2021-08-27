@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+//     options {
+//         parallelsAlwaysFailFast()
+//     }
     stages {
         //Sequential Examples
         stage('Non-Sequential Stage') {
