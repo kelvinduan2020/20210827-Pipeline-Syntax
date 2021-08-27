@@ -16,8 +16,8 @@ pipeline {
         stage('Agent from Dockerfile') {
             agent {
                 dockerfile {
-                    filename 'Dockerfile.build'
-                    dir 'buildDockerfile'
+                    filename 'Dockerfile.OpenJDK'
+                    dir 'Dockerfiles'
                     additionalBuildArgs '--build-arg version=1.0.0'
                     args '-v /tmp:/tmp'
                     //registryUrl 'https://myregistry.com/'
