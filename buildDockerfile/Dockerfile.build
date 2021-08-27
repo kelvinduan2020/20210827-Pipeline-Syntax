@@ -1,5 +1,2 @@
 # The line below states we will base our new image on the Latest Official Ubuntu 
-FROM ubuntu:latest
-
-# Update the image to the latest packages
-RUN apt-get update && apt-get upgrade -y
+FROM openjdk:8-jre
