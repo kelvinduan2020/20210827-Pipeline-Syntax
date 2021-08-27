@@ -1,4 +1,4 @@
-Pipeline {
+pipeline {
     agent none
     
     //Stage-level Agent Section
