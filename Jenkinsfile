@@ -3,8 +3,11 @@ pipeline {
     stages {
         stage('Example Build') {
             agent { 
-                docker 'maven:3.8.1-adoptopenjdk-11'
-                label 'docker-agent'
+                docker {
+                    image 'maven:3.8.1-adoptopenjdk-11'
+                    label 'maven-agent'
+                    args  '-v /tmp:/tmp'
+                }
             } 
             steps {
                 echo 'Hello, Maven'
