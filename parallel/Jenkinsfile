@@ -1,6 +1,7 @@
 pipeline {
     agent any
     stages {
+        //Sequential Examples
         stage('Non-Sequential Stage') {
             //agent {
             //    label 'for-non-sequential'
@@ -27,16 +28,36 @@ pipeline {
                         echo "In Sequential 2"
                     }
                 }
-                stage('Parallel In Sequential') {
-                    parallel {
-                        stage('In Parallel 1') {
+            }
+        }
+        
+        //Parallel Examples
+        stage('Parallel Stage') {
+            when {
+                branch 'master'
+            }
+            failFast true
+            parallel {
+                stage('Branch A') {
+                    steps {
+                        echo "On Branch A"
+                    }
+                }
+                stage('Branch B') {
+                    steps {
+                        echo "On Branch B"
+                    }
+                }
+                stage('Branch C') {
+                    stages {
+                        stage('Nested 1') {
                             steps {
-                                echo "In Parallel 1"
+                                echo "In stage Nested 1 within Branch C"
                             }
                         }
-                        stage('In Parallel 2') {
+                        stage('Nested 2') {
                             steps {
-                                echo "In Parallel 2"
+                                echo "In stage Nested 2 within Branch C"
                             }
                         }
                     }
