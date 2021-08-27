@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Example Username with Password') {
             environment {
-                SERVICE_CREDS = credentials('my-predefined-username-password')
+                SERVICE_CREDS = credentials('kelvin')
             }
             steps {
                 sh 'echo "Service user is $SERVICE_CREDS_USR"'
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Example SSH Username with private key') {
             environment {
-                SSH_CREDS = credentials('my-predefined-ssh-creds')
+                SSH_CREDS = credentials('kelvin-key')
             }
             steps {
                 sh 'echo "SSH private key is located at $SSH_CREDS"'
