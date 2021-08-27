@@ -2,11 +2,13 @@ pipeline {
     agent any
     tools {
         maven 'apache-maven' 
+        gradle 'gradle'
     }
     stages {
         stage('Example') {
             steps {
                 sh 'mvn --version'
+                sh 'gradle --version'
             }
         }
     }
