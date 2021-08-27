@@ -33,31 +33,28 @@ pipeline {
         
         //Parallel Examples
         stage('Parallel Stage') {
-            when {
-                branch 'master'
-            }
             failFast true
             parallel {
-                stage('Branch A') {
+                stage('Parallel A') {
                     steps {
-                        echo "On Branch A"
+                        echo "On Parallel A"
                     }
                 }
-                stage('Branch B') {
+                stage('Parallel B') {
                     steps {
-                        echo "On Branch B"
+                        echo "On Parallel B"
                     }
                 }
-                stage('Branch C') {
+                stage('Parallel C') {
                     stages {
-                        stage('Nested 1') {
+                        stage('Nested Parallel 1') {
                             steps {
-                                echo "In stage Nested 1 within Branch C"
+                                echo "In stage Nested 1 within Parallel C"
                             }
                         }
-                        stage('Nested 2') {
+                        stage('Nested Parallel 2') {
                             steps {
-                                echo "In stage Nested 2 within Branch C"
+                                echo "In stage Nested 2 within Parallel C"
                             }
                         }
                     }
