@@ -25,8 +25,8 @@ pipeline {
                 }
             }
             steps {
-                echo 'Hello, Nginx'
-                sh 'sudo systemctl status nginx'
+                echo 'Hello, Ubuntu'
+                sh 'ls -l'
             }
         }
     }
